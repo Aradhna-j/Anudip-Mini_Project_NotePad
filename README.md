@@ -101,3 +101,7 @@ Deploy the generated .war file to Tomcat 10.
 Open in browser:
 
 http://localhost:8080/notePad/
+
+
+
+<img width="1612" height="848" alt="Screenshot 2025-12-11 233709" src="https://github.com/user-attachments/assets/4bbd54a2-924d-431a-90ba-70423cdb9623" />
