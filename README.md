@@ -1,65 +1,103 @@
-# Anudip-Mini_Project_NotePad
-This mini‑project is a full‑stack “Mini Notepad” web application built with Java (Servlets + JSP), MySQL, HTML, CSS, and vanilla JavaScript.
+📝 Mini Notepad – Java Servlet + JSP Full-Stack Web App
 
-Project overview
-Mini Notepad lets users create, view, and read text notes through a modern web UI. Notes are stored persistently in a MySQL database, and the frontend provides a smooth editing experience with autosave and basic analytics like word/character count.
+Mini Notepad is a lightweight, full-stack note-taking web application built using Java Servlets, JSP, MySQL, and vanilla JavaScript. It provides a clean writing experience, autosave drafts, real-time counters, theme toggling, and a modern glassmorphic UI — all while storing notes securely in a MySQL database.
 
-Tech stack
-Java 21, Jakarta Servlet API (Jakarta EE)
+🚀 Features
+✍️ Note Management
 
-JSP for server‑side views
+Create notes with title + text body
 
-Tomcat 10 as the application server
+View individual notes on a dedicated page
 
-MySQL + JDBC (mysql‑connector‑j) for persistence
+List all notes sorted by latest first
 
-HTML5, CSS3, vanilla JavaScript for the frontend
+Optional Pinned Notes (stay at top)
 
-Maven for build and dependency management
+💾 Persistence
 
-Features
-Create notes with a title and rich text body.
+MySQL database storage for all notes
 
-Store notes in a MySQL table with timestamps.
+DAO-based CRUD architecture
 
-List all notes in reverse chronological order.
+JDBC (mysql-connector-j) integration
 
-View a single note on a dedicated page.
+🖥️ Frontend UX Enhancements
 
-Optional “Pinned” flag to keep important notes at the top.
+LocalStorage draft autosave (never lose text on refresh!)
 
-LocalStorage‑based draft autosave in the browser (no data loss on refresh).
+Live word & character count
 
-Live word and character count for the note body.
+Modern glassmorphism UI
 
-Dark, glassmorphism‑style UI with animated focus and button micro‑interactions.
+Smooth animations & micro-interactions
 
-Light/dark theme toggle persisted in LocalStorage.
+Light/Dark theme toggle (stored in LocalStorage)
 
-Client‑side search filter on the notes list page.
+Instant search filter on notes list page
 
-Learning objectives
+🛠️ Tech Stack
+Backend
+
+Java 21
+
+Jakarta Servlet API (Jakarta EE)
+
+JSP
+
+Tomcat 10
+
+MySQL + JDBC
+
+Maven for build/dependency management
+
+Frontend
+
+HTML5
+
+CSS3
+
+JavaScript (vanilla)
+
+📚 Learning Objectives
+
 This project demonstrates:
 
-How to structure a classic JSP/Servlet/JDBC web app.
+Structuring a classic Servlet–JSP–JDBC web app
 
-Connecting a Java web application to MySQL using JDBC.
+Connecting Java to MySQL using JDBC + DAO pattern
 
-Implementing a simple DAO layer (CRUD‑style queries) and model classes.
+Using Maven to manage dependencies and build WAR files
 
-Using Maven to manage dependencies and build a WAR for Tomcat.
+Building interactive UI using pure CSS + JS
 
-Designing a responsive, modern UI with pure CSS and small animations.
+Implementing features like autosave, live counters, search, and theme persisting
 
-Enhancing UX with JavaScript: autosave, theme toggling, live counters, and filtering.
+Deploying Java apps on Tomcat 10
 
-How to run (high level)
-Create the notepad_db database and notes table in MySQL.
+🗄️ Database Setup
+CREATE DATABASE notepad_db;
 
-Configure DB credentials in DBUtil.
+CREATE TABLE notes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    pinned BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-Run mvn clean package to build, or use your IDE’s Maven integration.
+▶️ How to Run
 
-Deploy the generated WAR (or WAR exploded) to a local Tomcat 10 server.
+Create the database notepad_db and table (SQL above).
 
-Open http://localhost:8080/notePad/ to start using the app.
+Update DB credentials inside DBUtil.
+
+Run:
+
+mvn clean package
+
+
+Deploy the generated .war file to Tomcat 10.
+
+Open in browser:
+
+http://localhost:8080/notePad/
